@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- BOOTSTRAP ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <section id="start-section">
+        <nav class="nav">
+            <div class="container">
+                <div class="logo">
+                    <a href="#">IMP</a>
+                </div>
+                <div id="mainListDiv" class="main_list">
+                    <ul class="navlinks">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Me</a></li>
+                        <li><a href="#">Roadmap</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <span class="navTrigger">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </span>
+            </div>
+        </nav>  
+        <section id="backgroundImage">
+            <div class="title">
+                <span>IVÁN MARTÍN PRIETO</span>
+                <span>Computer Engineer and <a target="_blanck">computer security lover</a></span></div>
+        </section>
+    </section>
+
+    <section>
+        <svg class="editorial"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28 "
+            preserveAspectRatio="none">
+            <defs>
+            <path id="gentle-wave"
+            d="M-160 44c30 0 
+                58-18 88-18s
+                58 18 88 18 
+                58-18 88-18 
+                58 18 88 18
+                v44h-352z" />
+            </defs>
+            <g class="parallax1">
+            <use xlink:href="#gentle-wave" x="50" y="3" fill="#f7ca18"/>
+            </g>
+                <g class="parallax2">
+            <use xlink:href="#gentle-wave" x="50" y="0" fill="#4579e2"/>
+                </g>
+                <g class="parallax3">
+            <use xlink:href="#gentle-wave" x="50" y="9" fill="#3461c1"/>
+            </g>
+                <g class="parallax4">
+            <use xlink:href="#gentle-wave" x="50" y="6" fill="#fff"/>  
+            </g>
+        </svg>
+
+    </section>
+
+
+    <section id="about-section">
+
+        <div class="title">
+            about me
+        </div>
+
+       <div class="row">
+            <div class="col-md-9 content">
+                I am Iván, a 20 years old student of Computer Engineering from Carlos III University of Madrid. <br>
+                I am passionate about video games and computers. I consider myself an active person who always needs to achieve what he sets out to do. I love learning new things about what I already know in terms of programming and I am also very interested in web design.
+                <br>
+                <hr>
+                Actually I am on 3rd year and I am open to any offer that may seem interesting.
+            </div>
+            <div class="col-md-3">
+                <img src="images/me.jpg" alt="Image of me :P" class="pic-me">
+            </div>
+
+            <section id="project-section">
+
+                <div class="title">
+                    personal projects
+                </div>
+                <div>
+                    <a type="button" class="btn btn-warning" data-bs-slide="prev" href="#carouselExampleControls">
+                        <i class="bi bi-arrow-left"></i>
+                    </a>
+                    <a type="button" class="btn btn-success" data-bs-slide="next" href="#carouselExampleControls">
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+                  
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <div class="row row-cols-1 row-cols-md-3 g-4">
+                            <div class="col">
+                              <div class="card">
+                                <img src="images/cards/database.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">Database in Oracle SQL</h5>
+                                </div>
+                                <div class="card-footer">
+                                  <small class="text-muted">2nd year - Files and databases</small>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="card">
+                                <img src="images/cards/galaga.jpeg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">Galaga retro game in Java</h5>
+                                </div>
+                                <div class="card-footer">
+                                  <small class="text-muted">1st year - Programming</small>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="card">
+                                <img src="images/cards/self-driven-car.jpeg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">Self driven car system in Java</h5>
+                                </div>
+                                <div class="card-footer">
+                                  <small class="text-muted">2nd year - Principles of software development</small>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="carousel-item">
+                        <div class="row row-cols-1 row-cols-md-3 g-4">
+                            <div class="col">
+                              <div class="card">
+                                <img src="images/cards/startup.jpeg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">Startup design for business</h5>
+                                </div>
+                                <div class="card-footer">
+                                  <small class="text-muted">2nd year - Introduccion to business management</small>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="card">
+                                <img src="images/cards/social_network.jpeg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">Social network concept in Java</h5>
+                                </div>
+                                <div class="card-footer">
+                                  <small class="text-muted">1st year - Algorithms and data structures</small>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="card">
+                                <img src="images/cards/filterImage.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">Image filters in C++</h5>
+                                </div>
+                                <div class="card-footer">
+                                  <small class="text-muted">3rd year - Computer Architecture</small>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="carousel-item">
+                        <div class="row row-cols-1 row-cols-md-3 g-4">
+                            <div class="col">
+                              <div class="card">
+                                <img src="images/cards/routers.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">Routers configuration through Linux terminal</h5>
+                                </div>
+                                <div class="card-footer">
+                                  <small class="text-muted">3rd year - Computer networks </small>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="card">
+                                <img src="images/cards/command-console.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">Linux console in C</h5>
+                                </div>
+                                <div class="card-footer">
+                                  <small class="text-muted">2nd year - Operating systems</small>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="card">
+                                <img src="images/cards/applicationDesign.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">Application and web design</h5>
+                                </div>
+                                <div class="card-footer">
+                                  <small class="text-muted">3rd year - User interfaces</small>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+            </section>
+       </div>
+    </section>
+
+    <section>
+        <svg class="editorial"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28 "
+            preserveAspectRatio="none">
+            <defs>
+            <path id="gentle-wave-2"
+            d="M-160 44c30 0 
+                58-18 88-18s
+                58 18 88 18 
+                58-18 88-18 
+                58 18 88 18
+                v44h-352z"/>
+            </defs>
+            <g class="parallax1">
+            <use xlink:href="#gentle-wave-2" x="50" y="3" fill="#f7ca18"/>
+            </g>
+                <g class="parallax2">
+            <use xlink:href="#gentle-wave-2" x="50" y="0" fill="#4579e2"/>
+                </g>
+                <g class="parallax3">
+            <use xlink:href="#gentle-wave-2" x="50" y="9" fill="#3461c1"/>
+            </g>
+                <g class="parallax4">
+            <use xlink:href="#gentle-wave-2" x="50" y="6" fill="#fff"/>  
+            </g>
+        </svg>
+
+    </section>
+
+    <section id="roadmap-section">
+        <div class="title">
+            roadmap
+        </div>
+
+
+    </section>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
