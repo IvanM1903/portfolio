@@ -14,17 +14,13 @@
     
   })(jQuery);
 
-$('.navTrigger').click(function () {
-    $(this).toggleClass('active');
-    $("#mainListDiv").toggleClass("show_list");
-    $("#mainListDiv").fadeIn();
-});
-
 $(window).scroll(function() {
     if ($(document).scrollTop() > 50) {
         $('.nav').addClass('affix');
+        console.log("done");
     } else {
         $('.nav').removeClass('affix');
+        console.log("not done");
     }
 });
 
@@ -33,8 +29,21 @@ jQuery(document).ready(function(){
 		jQuery(this).find('.skillbar-bar').animate({
 			width:jQuery(this).attr('data-percent')
 		},6000);
-	});
+  });
+  $('.scrollTo').click(function() {
+    var getElem = $(this).attr('href');
+	var targetDistance = 120;
+	if ($(getElem).length) {
+		var getOffset = $(getElem).offset().top;
+		$('html,body').animate({
+			scrollTop: getOffset - targetDistance
+		}, 50);
+	}
+	return false;
 });
+});
+
+
 
 jQuery('.Count').each(function () {
   var $this = $(this);

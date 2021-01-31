@@ -12,6 +12,24 @@
 </head>
 <body>
     <section id="start-section">
+      <nav class="nav navbar fixed-top navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="https://www.instagram.com/imp1903/">IMP</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link scrollTo" href="#start-section">Home</a>
+              <a class="nav-link scrollTo" href="#about-section">About Me</a>
+              <a class="nav-link scrollTo" href="#roadmap-section">Roadmap</a>
+              <a class="nav-link scrollTo" href="#skillset-section">Skillset</a>
+              <a class="nav-link scrollTo" href="#contact-section">Contact</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!--
         <nav class="nav">
             <div class="container">
                 <div class="logo">
@@ -33,6 +51,7 @@
                 </span>
             </div>
         </nav>  
+        -->
         <section id="backgroundImage">
             <div class="title">
                 <span>IVÁN MARTÍN PRIETO</span>
@@ -74,159 +93,163 @@
 
     <section id="about-section">
 
-        <div class="title">
+      <div class="container">
+          <div class="title">
             about me
         </div>
 
-       <div class="row">
-            <div class="col-md-9 content">
-                I am Iván, a 20 years old student of Computer Engineering from Carlos III University of Madrid. <br>
-                I am passionate about video games and computers. I consider myself an active person who always needs to achieve what he sets out to do. I love learning new things about what I already know in terms of programming and I am also very interested in web design.
-                <br>
-                <hr>
-                Actually I am on 3rd year and I am open to any offer that may seem interesting.
-            </div>
-            <div class="col-md-3">
-                <img src="images/me.jpg" alt="Image of me :P" class="pic-me">
-            </div>
+        <div class="row">
+              <div class="col-md-8 col-sm-12 content">
+                  I am Iván, a 20 years old student of Computer Engineering from Carlos III University of Madrid. <br>
+                  I am passionate about video games and computers. I consider myself an active person who always needs to achieve what he sets out to do. I love learning new things about what I already know in terms of programming and I am also very interested in web design.
+                  <br>
+                  <hr>
+                  Actually I am on 3rd year and I am open to any offer that may seem interesting.
+              </div>
+              <div class="col pic-container">
+                <img src="images/me.jpg" alt="Image of me :P" class="pic-me img-fluid">
+              </div>
+              
+        </div>
 
-            <section id="project-section">
+        <section id="project-section">
 
-                <div class="title col-md-4">
-                    personal projects &nbsp;&nbsp;&nbsp;
-                    <i class="bi bi-lock"></i>
-                </div>
-                <div>
-                  Here are some projects which I have developped for University.
-                  <br><br>
-                </div>
-                <div class="carousel-buttons">
-                    <a type="button" class="btn btn-outline-primary" data-bs-slide="prev" href="#carouselExampleControls">
-                        <i class="bi bi-arrow-left"></i>
-                    </a>
-                    &nbsp;&nbsp;&nbsp;
-                    <a type="button" class="btn btn-outline-primary" data-bs-slide="next" href="#carouselExampleControls">
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-                </div>
-                  
-                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <div class="row row-cols-1 row-cols-md-3 g-4">
-                            <div class="col">
-                              <div class="card">
-                                <img src="images/cards/database.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                  <h5 class="card-title">Database in Oracle SQL</h5>
-                                </div>
-                                <div class="card-footer">
-                                  <small class="text-muted">2nd year - Files and databases</small>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col">
-                              <div class="card">
-                                <img src="images/cards/galaga.jpeg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                  <h5 class="card-title">Galaga retro game in Java</h5>
-                                </div>
-                                <div class="card-footer">
-                                  <small class="text-muted">1st year - Programming</small>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col">
-                              <div class="card">
-                                <img src="images/cards/self-driven-car.jpeg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                  <h5 class="card-title">Self driven car system in Java</h5>
-                                </div>
-                                <div class="card-footer">
-                                  <small class="text-muted">2nd year - Principles of software development</small>
-                                </div>
-                              </div>
-                            </div>
+          <div class="title col-md-12">
+              personal projects &nbsp;
+              <i class="bi bi-lock"></i>
+          </div>
+          <div class="col-md-12">
+            Here are some projects which I have developped for University.
+            <br><br>
+          </div>
+          <div class="carousel-buttons">
+              <a type="button" class="btn btn-outline-primary" data-bs-slide="prev" href="#carouselExampleControls">
+                  <i class="bi bi-arrow-left"></i>
+              </a>
+              &nbsp;&nbsp;&nbsp;
+              <a type="button" class="btn btn-outline-primary" data-bs-slide="next" href="#carouselExampleControls">
+                  <i class="bi bi-arrow-right"></i>
+              </a>
+          </div>
+            
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner mx-auto">
+                <div class="carousel-item active">
+                  <div class="row row-cols-1 row-cols-md-3 g-4">
+                      <div class="col">
+                        <div class="card mx-auto">
+                          <img src="images/cards/database.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Database in Oracle SQL</h5>
                           </div>
+                          <div class="card-footer">
+                            <small class="text-muted">2nd year - Files and databases</small>
+                          </div>
+                        </div>
                       </div>
-                      <div class="carousel-item">
-                        <div class="row row-cols-1 row-cols-md-3 g-4">
-                            <div class="col">
-                              <div class="card">
-                                <img src="images/cards/startup.jpeg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                  <h5 class="card-title">Startup design for business</h5>
-                                </div>
-                                <div class="card-footer">
-                                  <small class="text-muted">2nd year - Business management</small>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col">
-                              <div class="card">
-                                <img src="images/cards/social_network.jpeg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                  <h5 class="card-title">Social network concept in Java</h5>
-                                </div>
-                                <div class="card-footer">
-                                  <small class="text-muted">1st year - Algorithms and data structures</small>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col">
-                              <div class="card">
-                                <img src="images/cards/filterImage.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                  <h5 class="card-title">Image filters in C++</h5>
-                                </div>
-                                <div class="card-footer">
-                                  <small class="text-muted">3rd year - Computer Architecture</small>
-                                </div>
-                              </div>
-                            </div>
+                      <div class="col">
+                        <div class="card mx-auto">
+                          <img src="images/cards/galaga.jpeg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Galaga retro game in Java</h5>
                           </div>
+                          <div class="card-footer">
+                            <small class="text-muted">1st year - Programming</small>
+                          </div>
+                        </div>
                       </div>
-                      <div class="carousel-item">
-                        <div class="row row-cols-1 row-cols-md-3 g-4">
-                            <div class="col">
-                              <div class="card">
-                                <img src="images/cards/routers.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                  <h5 class="card-title">Routers configuration through Linux terminal</h5>
-                                </div>
-                                <div class="card-footer">
-                                  <small class="text-muted">3rd year - Computer networks </small>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col">
-                              <div class="card">
-                                <img src="images/cards/command-console.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                  <h5 class="card-title">Linux console in C</h5>
-                                </div>
-                                <div class="card-footer">
-                                  <small class="text-muted">2nd year - Operating systems</small>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col">
-                              <div class="card">
-                                <img src="images/cards/applicationDesign.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                  <h5 class="card-title">Application and web design</h5>
-                                </div>
-                                <div class="card-footer">
-                                  <small class="text-muted">3rd year - User interfaces</small>
-                                </div>
-                              </div>
-                            </div>
+                      <div class="col">
+                        <div class="card mx-auto">
+                          <img src="images/cards/self-driven-car.jpeg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Self driven car system in Java</h5>
                           </div>
+                          <div class="card-footer">
+                            <small class="text-muted">2nd year - Principles of software development</small>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-            </section>
-       </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row row-cols-1 row-cols-md-3 g-4">
+                      <div class="col">
+                        <div class="card mx-auto">
+                          <img src="images/cards/startup.jpeg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Startup design for business</h5>
+                          </div>
+                          <div class="card-footer">
+                            <small class="text-muted">2nd year - Business management</small>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="card mx-auto">
+                          <img src="images/cards/social_network.jpeg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Social network concept in Java</h5>
+                          </div>
+                          <div class="card-footer">
+                            <small class="text-muted">1st year - Algorithms and data structures</small>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="card mx-auto">
+                          <img src="images/cards/filterImage.png" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Image filters in C++</h5>
+                          </div>
+                          <div class="card-footer">
+                            <small class="text-muted">3rd year - Computer Architecture</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row row-cols-1 row-cols-md-3 g-4">
+                      <div class="col">
+                        <div class="card mx-auto">
+                          <img src="images/cards/routers.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Routers configuration through Linux terminal</h5>
+                          </div>
+                          <div class="card-footer">
+                            <small class="text-muted">3rd year - Computer networks </small>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="card mx-auto">
+                          <img src="images/cards/command-console.png" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Linux console in C</h5>
+                          </div>
+                          <div class="card-footer">
+                            <small class="text-muted">2nd year - Operating systems</small>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="card mx-auto">
+                          <img src="images/cards/applicationDesign.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Application and web design</h5>
+                          </div>
+                          <div class="card-footer">
+                            <small class="text-muted">3rd year - User interfaces</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+      </section>
+      
+      </div>
        <br><br>
     </section>
 
@@ -426,18 +449,18 @@
 
     <section id="contact-section">
 
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-4 col-sm-12">
             <p class="title">
               contact
             </p>
           </div>
-          <div class="col-md-8">
+          <div class="col-md-8 col-sm-12">
             <ul>
-              <li>Linkedin &nbsp;&nbsp;<a href=""><i class="bi bi-linkedin"></i></a></li>
-              <li>Github &nbsp;&nbsp;<a href=""><i class="bi bi-github"></i></a></li>
-              <li>Email &nbsp;&nbsp;<a href=""><i class="bi bi-envelope-fill"></i></a></li>
+              <li class="col">Linkedin &nbsp;&nbsp;<a href=""><i class="bi bi-linkedin"></i></a></li>
+              <li class="col">Github &nbsp;&nbsp;<a href=""><i class="bi bi-github"></i></a></li>
+              <li class="col">Email &nbsp;&nbsp;<a href=""><i class="bi bi-envelope-fill"></i></a></li>
             </ul>
           </div>
         </div>
