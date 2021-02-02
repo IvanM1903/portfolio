@@ -452,6 +452,7 @@ width:110px;
   position:absolute;
   left:0px;
   float:left;
+  display: none;
 }
 .svg-separator{
   height: 60px;
