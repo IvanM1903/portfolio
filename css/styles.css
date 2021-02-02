@@ -42,6 +42,10 @@ html{
   text-shadow: 2px 2px 2px #fff;
   transition: all 0.5s ease;
 }
+.active{
+  color: #414141 !important;
+  text-shadow: 2px 2px 2px #fff;
+}
 .affix {
     padding: 0;
     background-color: rgb(223, 223, 223);
@@ -50,6 +54,10 @@ html{
 .affix .navbar-brand{
   color: rgb(226, 225, 225);
   text-shadow: 2px 2px 2px #999999;
+}
+.affix .active{
+  background-color: rgb(202, 202, 202);
+  border-radius: 10px;
 }
 /* <<<<<< NAV END >>>>>> */
 
