@@ -1,10 +1,35 @@
+/* ====== ON LOAD EVENTS PAGE ====== */
+setTimeout(function(){
+  $(".loader-wrapper").fadeOut("slow");
+  $('body').unbind('touchmove');
+  $('body').removeClass('stop-scrolling');
+}, 2500);
+//Reset scroll top
+history.scrollRestoration = "manual";
+$(window).on('beforeunload', function(){
+      $(window).scrollTop(0);
+});
+
+/* ====== SKILLSET ====== */
+jQuery('.Count').each(function () {
+  var $this = $(this);
+  jQuery({ Counter: 0 }).animate({ Counter: $this.text() }, {
+    duration: 6000,
+    easing: 'swing',
+    step: function () {
+      $this.text(Math.ceil(this.Counter));
+    }
+  });
+});
+
 jQuery(document).ready(function(){
+  $('body').addClass('stop-scrolling');
+  $('body').bind('touchmove', function(e){e.preventDefault()});
 
   /* ====== ABOUT ME PORTFOLIO ====== */
 
   var list = document.getElementsByClassName('card');
   //This has stored the number of cards from my html into a list
-  
   var listOfHeight = [];
   var iterator = 0;
   var height = 0;
@@ -48,10 +73,6 @@ jQuery(document).ready(function(){
       }
     });
   });
-
-
-
-
   $(window).scroll(function() {
     if ($(document).scrollTop() > 50) {
         $('.nav').addClass('affix');
@@ -59,7 +80,6 @@ jQuery(document).ready(function(){
         $('.nav').removeClass('affix');
     }
   });
-
   $('.scrollTo').click(function() {
     var getElem = $(this).attr('href');
     var targetDistance = 120;
@@ -71,24 +91,6 @@ jQuery(document).ready(function(){
     }
     return false;
   });
-
-  
-});
-
-
-/* ====== SKILLSET ====== */
-jQuery('.Count').each(function () {
-  var $this = $(this);
-  jQuery({ Counter: 0 }).animate({ Counter: $this.text() }, {
-    duration: 6000,
-    easing: 'swing',
-    step: function () {
-      $this.text(Math.ceil(this.Counter));
-    }
-  });
-});
-
-$(document).ready(function() {
   $('#skillset-section').waypoint(function() {
     jQuery('.skillbar').each(function(){
       jQuery(this).find('.skillbar-bar').animate({
