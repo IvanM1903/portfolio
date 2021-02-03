@@ -22,7 +22,35 @@ jQuery('.Count').each(function () {
   });
 });
 
+/* ====== RESIZE WINDOW ====== */
+
+$(window).resize(function(){
+  if($(window).width() < 768){
+    //Its mobile version
+    var elementsList = document.querySelectorAll('.timeline li');
+    elementsList.forEach(li => {
+      if(li.classList.contains('timeline-inverted')){
+        li.classList.remove('timeline-inverted');
+        li.classList.add('timeline');
+        li.classList.add('changed');
+      }
+    });
+  }else{
+    var elementsList = document.querySelectorAll('.timeline li');
+    elementsList.forEach(li => {
+      if(li.classList.contains('changed')){
+        li.classList.remove('changed');
+        li.classList.remove('timeline');
+        li.classList.add('timeline-inverted');
+      }
+    });
+  }
+});
+
+
 jQuery(document).ready(function(){
+
+  //Loader event prevent scroll
   $('body').addClass('stop-scrolling');
   $('body').bind('touchmove', function(e){e.preventDefault()});
 
