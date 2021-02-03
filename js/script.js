@@ -35,6 +35,11 @@ $(window).resize(function(){
         li.classList.add('changed');
       }
     });
+    var elementFlex = document.getElementById('toShrinkPhone');
+    //console.log(elementFlex.classList[0]);
+    elementFlex.classList.remove('d-flex');
+    //elementFlex.classList.remove('d-flex');
+
   }else{
     var elementsList = document.querySelectorAll('.timeline li');
     elementsList.forEach(li => {
@@ -44,9 +49,9 @@ $(window).resize(function(){
         li.classList.add('timeline-inverted');
       }
     });
+    elementFlex.classList.add('d-flex');
   }
 });
-
 
 jQuery(document).ready(function(){
 
@@ -93,7 +98,7 @@ jQuery(document).ready(function(){
         current = section.getAttribute('id');
       }
     });
-    console.log(current);
+    //console.log(current);
     navLi.forEach(a => {
       a.classList.remove('active');
       if(a.classList.contains(current)){
