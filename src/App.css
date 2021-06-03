@@ -8,6 +8,8 @@ body{
   --primary-white: #fff;
   --primary-orange: #f9ab00;
   --primary-dark: rgba(255,255,255,0);
+  --primary-green: #5C996D;
+  --primary-hover-green: #568864;
 }
 
 .App {
@@ -52,6 +54,10 @@ body{
 
 /**************************** NAVBAR ***************************************/
 
+nav{
+  z-index: 2;
+  height: auto !important;
+}
 
 .logo{
   width: 100px;
@@ -77,10 +83,129 @@ nav a.nav-link{
   height: 6rem !important;
 }
 
-.navbar-nav > li > a.active, .navbar-nav > li > a.active:focus{
-  border-top: 3px solid var(--primary-orange);
+.nav-link{
+  display: inline-block;
+  position: relative;
 }
 
-.navbar-nav > li > a:hover{
-  border-top: 3px solid var(--primary-orange);
+.nav-link:after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #f9ab00;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+
+.nav-link:hover:after{
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/**************************** HEADER ***************************************/
+
+.header-wraper{
+  position: relative;
+  background: url(images/header-wall.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.main-info{
+  position: absolute;
+  top: 0;
+  left: 100px;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.main-info h1{
+  color: var(--primary-white);
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 5px 10px;
+  text-transform: uppercase;
+}
+
+.main-info h3{
+  color: var(--primary-orange);
+  background-color: rgba(0, 0, 0, 0.2);
+  margin-top: 1rem;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+
+/*------------- TYPED TEXT -------------------*/
+
+.typed-text{
+  font-size: 2rem;
+  color: var(--primary-white);
+}
+
+/*------------- HEADER MAIN BUTTON -------------------*/
+
+.btn-main{
+  text-transform: uppercase;
+  border-radius: 7px;
+  padding: 10px 12px 12px 12px;
+  background-color: var(--primary-green);
+  color: var(--primary-white);
+  margin: 2rem;
+}
+
+.btn-main:hover{
+  text-decoration: none;
+  background-color: var(--primary-hover-green);
+  color: var(--primary-white);
+  transition: .5s ease-in-out;
+}
+
+/*------------- PARTICLES JS -------------------*/
+
+
+.tsparticles-canvas-el{
+  position: absolute;
+  height: 100vh;
+  width: 100wv;
+  z-index: 1;
+
+}
+
+
+
+/****************** MEDIA QUERIES SCREEN SIZE ************************/
+
+@media screen and (max-width: 425px) {
+  .logo{
+    width: 50%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main-info h1{  
+    font-size: 1.5rem !important;
+  } 
+  .typed-text{
+    font-size: 1.3rem !important;
+  }
+}
+@media screen and (max-width: 992px) {
+  .main-info{
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
 }
