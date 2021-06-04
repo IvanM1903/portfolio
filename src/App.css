@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
 
+html{
+  scroll-behavior: smooth;
+}
 body{
   font-family: 'Roboto Condensed', sans-serif;
 }
@@ -7,7 +10,7 @@ body{
 :root{
   --primary-white: #fff;
   --primary-orange: #f9ab00;
-  --primary-dark: rgba(255,255,255,0);
+  --primary-dark: rgb(39, 39, 39);
   --primary-green: #5C996D;
   --primary-hover-green: #568864;
 }
@@ -57,6 +60,7 @@ body{
 nav{
   z-index: 2;
   height: auto !important;
+  background-color: var(--primary-dark) !important;
 }
 
 .logo{
@@ -74,7 +78,6 @@ nav a.nav-link{
   margin-right: 0.75rem;
   margin-left: 0.75rem;
   color: var(--primary-white) !important;
-  border-top: 0.1875rem solid var(--primary-dark);
 }
 
 .navbar-brand{
@@ -120,7 +123,7 @@ nav a.nav-link{
 .main-info{
   position: absolute;
   top: 0;
-  left: 100px;
+  left: 200px;
   bottom: 0;
   z-index: 1;
   display: flex;
@@ -178,19 +181,74 @@ nav a.nav-link{
 
 .tsparticles-canvas-el{
   position: absolute;
+  background-color: var(--primary-dark);
   height: 100vh;
-  width: 100wv;
+  width: 100vw;
   z-index: 1;
 
 }
 
+/************************** ABOUT ME ********************************/
 
+#About-sect{
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  z-index: 2;
+}
 
+#About-sect .content-aboutme{
+  color: var(--primary-white);
+  letter-spacing: 1.2px;
+  text-align: justify;
+  font-size: 1.3rem;
+  height: 50%;
+}
+.name-aboutme{
+  color: var(--primary-orange);
+}
+.interest-aboutme{
+  color: var(--primary-green);
+}
+
+.social-aboutme{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.LI-profile-badge{
+  box-shadow: 0px 0px var(--primary-white);
+  transition: all 0.4s ease-in-out;
+}
+.LI-profile-badge:hover{
+  transform: translate(20px,20px);
+  box-shadow: -15px -15px var(--primary-white);
+  cursor: pointer;
+}
+
+.picture-container{
+  display: flex;
+  justify-content: center;
+}
+.picture-me{
+  max-width: 50%;
+  border-radius: 250px;
+  transition: all 0.5s ease-in-out;
+}
+.picture-me:hover{
+  transform: scale(0.9);
+}
 /****************** MEDIA QUERIES SCREEN SIZE ************************/
 
-@media screen and (max-width: 425px) {
-  .logo{
-    width: 50%;
+@media screen and (max-width: 992px) {
+  .main-info{
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
   }
 }
 @media screen and (max-width: 768px) {
@@ -201,11 +259,8 @@ nav a.nav-link{
     font-size: 1.3rem !important;
   }
 }
-@media screen and (max-width: 992px) {
-  .main-info{
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+@media screen and (max-width: 425px) {
+  .logo{
+    width: 50%;
   }
 }
