@@ -9,23 +9,25 @@
       name="description"
       content="Web site created using create-react-app"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link
       rel="stylesheet"
       href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
-
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-
     <title>React App</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
 
+    <div class="loader-wrapper">
+      <span class="loader">
+        <span class="loader-inner"></span>
+      </span>
+    </div>
+
     <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
     <script
@@ -38,6 +40,63 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
-    <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+    <script
+      type="text/javascript"
+      src="https://platform.linkedin.com/badges/js/profile.js"
+      async
+      defer
+    ></script>
   </body>
 </html>
+
+<script>
+  $(function () {
+    /* -- ONLOAD CONTENT -- */
+    setTimeout(function () {
+      $(".loader-wrapper").fadeOut("slow");
+      $("body").unbind("touchmove");
+      $("body").removeClass("stop-scrolling");
+    }, 2500);
+
+    /* -- LOAD ON TOP -- */
+    history.scrollRestoration = "manual";
+    $(window).on("beforeunload", function () {
+      $(window).scrollTop(0);
+    });
+    //Loader event prevent scroll
+    $("body").addClass("stop-scrolling");
+    $("body").bind("touchmove", function (e) {
+      e.preventDefault();
+    });
+
+    /* -- CHANGE NAVBAR OPACITY --*/
+    $(".navbar").css("background-color", "rgba(0,0,0,0.1)");
+
+    /* -- ADD EVENT LISTENER -- */
+    window.addEventListener("scroll", () => {
+      $(window).scroll(function () {
+        if ($(document).scrollTop() > 500) {
+          $(".navbar").addClass("setBackground");
+        } else {
+          $(".navbar").removeClass("setBackground");
+        }
+      });
+    });
+
+    $(".navbar-collapse a").click(function () {
+      $(".navbar-collapse").collapse("hide");
+    });
+
+    /* -- SCROLLER NAV LINKS -- */
+    $(".scrollTo").click(function () {
+      var getElem = $(this).attr("href");
+      var targetDistance = 100;
+      if ($(getElem).length) {
+        var getOffset = $(getElem).offset().top;
+        $("html,body").animate({
+          scrollTop: getOffset - targetDistance,
+        });
+      }
+    });
+  });
+</script>
