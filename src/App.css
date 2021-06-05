@@ -25,45 +25,14 @@ h3{
   --primary-white: #fff;
   --primary-orange: #f9ab00;
   --primary-dark: rgb(39, 39, 39);
+  --secondary-dark: rgb(53, 53, 53);
+  --secondary-dark-transparent: rgb(53, 53, 53, 0.5);
   --primary-green: #5C996D;
   --primary-hover-green: #568864;
   --primary-red: #F2595B;
 
 
   --nav-height: 116px;
-}
-.App {
-  text-align: center;
-}
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-.App-link {
-  color: #61dafb;
-}
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 /********************* LOADER PAGE *********************************/
@@ -121,7 +90,6 @@ h3{
 nav{
   z-index: 2;
   height: auto !important;
-  /*background-color: var(--primary-dark) !important;*/
 }
 
 .logo{
@@ -215,6 +183,10 @@ nav a.nav-link{
   padding: 5px 10px;
 }
 
+.info-rest{
+  display: flex;
+  flex-direction: column;
+}
 
 /*------------- TYPED TEXT -------------------*/
 
@@ -247,7 +219,7 @@ nav a.nav-link{
 .tsparticles-canvas-el{
   position: absolute;
   background-color: var(--primary-dark);
-  height: 100vh;
+  height: calc(100vh + var(--nav-height)) !important;
   width: 100vw;
   z-index: 1;
 
@@ -256,7 +228,7 @@ nav a.nav-link{
 /************************** ABOUT ME ********************************/
 
 #About-sect{
-  height: calc(100vh - var(--nav-height));
+  height: calc(100vh + var(--nav-height));
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -354,7 +326,7 @@ nav a.nav-link{
   padding-left: 10px;
 }
 
-/****************** MEDIA QUERIES SCREEN SIZE ************************/
+/****************** MEDIA QUERIES SCREEN SIZE ----- PORTRAIT ************************/
 
 @media screen and (max-width: 992px) {
   .main-info{
@@ -378,15 +350,95 @@ nav a.nav-link{
   
 }
 @media screen and (max-width: 425px) {
+  .navbar-brand img{
+    width: 75px;
+  }
   #About-sect .content-aboutme{
     padding-top: 10px !important;
   }
   .linkedin-badge{
-    height: 360px;
+    height: 260px;
     width: 260px;
   }
   .linkedin-badge:hover{
     transform: none;
     box-shadow: none;
+  }
+  .linkedin-employ, .linkedin-studies{
+    display: none;
+  }
+}
+
+/****************** MEDIA QUERIES SCREEN SIZE ----- LANDSCAPE ************************/
+
+@media screen and (orientation: landscape) and (max-width: 992px){
+
+  nav{
+    background-color: var(--secondary-dark) !important;
+  }
+  .navbar, .navbar-collapse{
+    flex-direction: column;
+  }
+  .navbar-expand-lg .navbar-nav {
+    flex-direction: column;
+    height: 100vh;
+  }
+  .navbar-brand img{
+    width: 50px !important;
+  }
+  .navbar {
+    width: 28%;
+    height: 100vh;
+    border-radius: 0px 0px 15px 0px;
+  }
+  .main-info{
+    flex-direction: row;
+  }
+  .info-name-comp{
+    position: absolute;
+    left: 20px;
+    bottom: 25%;
+  }
+  .typed-text{
+    font-size: 1.4rem;
+  }
+  .info-rest{
+    position: absolute;
+    right: 50px;
+    bottom: 18%;
+  }
+  .info-rest .btn-main{
+    margin-top: 16px;
+  }
+
+  #About-sect .content-aboutme{
+    font-size: 1rem;
+  }
+  #About-sect .row{
+    align-items: center;
+  }
+  .linkedin-image{
+    width: 70px !important;
+    height: 70px !important;
+    margin: 10px 0px;
+  }
+  .linkedin-descr{
+    display: none;
+  }
+  .linkedin-name{
+    border-bottom: none;
+    padding: 0;
+  }
+  .linkedin-badge{
+    align-self: flex-start;
+    height: auto;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .linkedin-employ{
+    display: none;
+  }
+  .linkedin-studies{
+    display: none;
   }
 }

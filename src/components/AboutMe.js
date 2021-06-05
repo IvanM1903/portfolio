@@ -4,23 +4,23 @@ import Empl from "../images/linkedin-employ.jpg";
 import Stud from "../images/linkedin-studies.jpg";
 const AboutMe = () => {
   return (
-    <div className="container-fluid" id="About-sect">
+    <section className="container-fluid" id="About-sect">
       <div className="row flex-row-reverse row-container">
         <div className="col-12 col-md-6">
           <p className="content-aboutme col-12">
-            I am <span className="name-aboutme">Iván</span>, a 20 years old student of Computer Engineering from Carlos III University of Madrid.
+            I am <span className="name-aboutme">Iván</span>, a 20 years old student of Bachelor in Computer Science Engineering at Carlos III University of Madrid.
             I am passionate about <span className="interest-aboutme">video games</span> and <span className="interest-aboutme">computers</span>. I consider myself an active person who always
             needs to achieve what he sets out to do. I love <span className="prop-aboutme">learning new things</span> about what I already know in
             terms of programming and I am also very interested in <span className="other-aboutme">cibersecurity</span> field and <span className="other-aboutme">web design</span>.
             </p>
         </div>
         <div className="col-md-6 col-12 social-aboutme">
-          <a href="https://www.linkedin.com/in/ivan-m-p/" target="_blank">
+          <a href="https://www.linkedin.com/in/ivan-m-p/" target="_blank" rel="noreferrer">
             <div className="row linkedin-badge">
               <img className="linkedin-image" src={Linkedin} alt="linkedin-cover"></img>
-              <a className="linkedin-name" href="https://www.linkedin.com/in/ivan-m-p/" target="_blank">
+              <span className="linkedin-name">
                 Iván M.P
-              </a>
+              </span>
               <div className="linkedin-descr">
                 Bachelor in Computer Science Engineering at Carlos III University of Madrid | Cybersecurity enthusiast 👨🏻‍💻
               </div>
@@ -36,7 +36,7 @@ const AboutMe = () => {
           </a>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

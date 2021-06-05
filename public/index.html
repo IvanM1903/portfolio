@@ -70,9 +70,9 @@
     });
 
     /* -- CHANGE NAVBAR OPACITY --*/
-    $(".navbar").css("background-color", "rgba(0,0,0,0.1)");
 
-    /* -- ADD EVENT LISTENER -- */
+    $(".navbar").css("background-color", "rgba(53, 53, 53, 0.8)");
+
     window.addEventListener("scroll", () => {
       $(window).scroll(function () {
         if ($(document).scrollTop() > 500) {
@@ -87,16 +87,64 @@
       $(".navbar-collapse").collapse("hide");
     });
 
-    /* -- SCROLLER NAV LINKS -- */
-    $(".scrollTo").click(function () {
-      var getElem = $(this).attr("href");
-      var targetDistance = 100;
-      if ($(getElem).length) {
-        var getOffset = $(getElem).offset().top;
-        $("html,body").animate({
-          scrollTop: getOffset - targetDistance,
-        });
-      }
-    });
+    /* -- SCROLL TO NAV LINKS -- */
+
+    // ----- BY DEFAULT -----
+
+    if (window.innerWidth > window.innerHeight) {
+      $(".scrollTo").click(function () {
+        var getElem = $(this).attr("href");
+        var targetDistance = 70;
+
+        if(getElem != "#Home-sect"){
+          if ($(getElem).length) {
+            var getOffset = $(getElem).offset().top;
+            $("html,body").animate({
+              scrollTop: getOffset + targetDistance,
+            });
+          }
+        }else{
+          scrollTo(getElem);
+        }
+      });
+    }
+    // ----- ON RESIZE WINDOW -----
+
+    window.addEventListener(
+      "resize",
+      function () {
+        if (window.innerWidth < 992) {
+          //Only mobile view
+
+          if (window.innerWidth > window.innerHeight) {
+            //Landscape mode
+            alert("landscape");
+            $(".scrollTo").click(function () {
+              var getElem = $(this).attr("href");
+              var targetDistance = 70;
+              if ($(getElem).length) {
+                var getOffset = $(getElem).offset().top;
+                $("html,body").animate({
+                  scrollTop: getOffset + targetDistance,
+                });
+              }
+            });
+          } else {
+            //Portrait mode
+            $(".scrollTo").click(function () {
+              var getElem = $(this).attr("href");
+              var targetDistance = 90;
+              if ($(getElem).length) {
+                var getOffset = $(getElem).offset().top;
+                $("html,body").animate({
+                  scrollTop: getOffset - targetDistance,
+                });
+              }
+            });
+          }
+        }
+      },
+      false
+    );
   });
 </script>

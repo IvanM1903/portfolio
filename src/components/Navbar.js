@@ -14,7 +14,7 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <hr color="white"></hr>
           <ul className="navbar-nav ml-auto">
-            <li className="nav-item active">
+            <li className="nav-item">
               <a className="nav-link scrollTo" href="#Home-sect">HOME <span className="sr-only">(current)</span></a>
             </li>
             <li className="nav-item">
