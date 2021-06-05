@@ -57,10 +57,6 @@
       e.preventDefault();
     });
 
-    /* -- CHANGE NAVBAR OPACITY --*/
-
-    $(".navbar").css("background-color", "rgba(53, 53, 53, 0.8)");
-
     /* -- CHECK LANDSCAPE RULE -- */
 
     if (window.innerWidth > window.innerHeight) {
@@ -83,10 +79,15 @@
 
   window.addEventListener("scroll", () => {
     $(window).scroll(function () {
-      if ($(document).scrollTop() > 500) {
+      if ($(document).scrollTop() > 800 && $(document).scrollTop() < 1900) {
         $(".navbar").addClass("setBackground");
-      } else {
+        $(".navbar").removeClass("setBackground-2");
+      }else if($(document).scrollTop() > 1900){
+        $(".navbar").addClass("setBackground-2");
+      }
+        else {
         $(".navbar").removeClass("setBackground");
+        $(".navbar").removeClass("setBackground-2");
       }
     });
   });

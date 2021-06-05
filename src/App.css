@@ -5,6 +5,7 @@ html{
 }
 body{
   font-family: 'Roboto Condensed', sans-serif;
+  background-color: #2E3A52 !important;
 }
 a{
   text-decoration: none !important;
@@ -90,6 +91,8 @@ h3{
 nav{
   z-index: 2;
   height: auto !important;
+  background-color: rgba(53, 53, 53, 0.8);
+  transition: all 0.5s ease;
 }
 
 .logo{
@@ -99,6 +102,11 @@ nav{
 
 .setBackground{
   background-color: var(--primary-dark) !important;
+  transition: all 0.5s ease;
+}
+
+.setBackground-2{
+  background-color: #2E3A52 !important;
   transition: all 0.5s ease;
 }
 
@@ -334,7 +342,7 @@ nav a.nav-link{
 #Skill-sect{
   min-height: 100vh;
   width: 100%;
-  background-color: #f9ab00;
+  background-color: #2E3A52;
 }
 
 
