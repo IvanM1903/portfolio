@@ -186,6 +186,7 @@ nav a.nav-link{
 .info-rest{
   display: flex;
   flex-direction: column;
+  width: 240px;
 }
 
 /*------------- TYPED TEXT -------------------*/
@@ -217,7 +218,7 @@ nav a.nav-link{
 
 
 .tsparticles-canvas-el{
-  position: absolute;
+  position: relative;
   background-color: var(--primary-dark);
   height: calc(100vh + var(--nav-height)) !important;
   width: 100vw;
@@ -233,20 +234,22 @@ nav a.nav-link{
   justify-content: flex-start;
   align-items: center;
   position: absolute;
+  top: 100%;
   z-index: 2;
 }
 .row-container{
   display: flex;
+  max-width: 100vw;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: center;
-  height: 100%;
 }
 #About-sect .content-aboutme{
   color: var(--primary-white);
   letter-spacing: 1.2px;
   text-align: justify;
   font-size: 1.3rem;
-  height: 50%;
+  width: 50%;
 }
 .name-aboutme{
   color: var(--primary-orange);
@@ -326,6 +329,16 @@ nav a.nav-link{
   padding-left: 10px;
 }
 
+/************************************ SKILLSET ************************************/
+
+#Skill-sect{
+  min-height: 100vh;
+  width: 100%;
+  background-color: #f9ab00;
+}
+
+
+
 /****************** MEDIA QUERIES SCREEN SIZE ----- PORTRAIT ************************/
 
 @media screen and (max-width: 992px) {
@@ -346,8 +359,17 @@ nav a.nav-link{
   #About-sect .content-aboutme{
     letter-spacing: 0px;
     font-size: 1.2rem !important;
+    width: 75%;
   }
-  
+  .linkedin-badge{
+    width: 260px;
+  }
+  .row-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }  
 }
 @media screen and (max-width: 425px) {
   .navbar-brand img{
@@ -355,7 +377,14 @@ nav a.nav-link{
   }
   #About-sect .content-aboutme{
     padding-top: 10px !important;
+    width: 100%;
   }
+  .row-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }  
   .linkedin-badge{
     height: 260px;
     width: 260px;
