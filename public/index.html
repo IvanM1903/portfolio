@@ -9,10 +9,7 @@
       name="description"
       content="Web site created using create-react-app"
     />
-    <link
-      rel="stylesheet"
-      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="../src/bootstrap/css/bootstrap.min.css" />
     <title>React App</title>
   </head>
   <body>
@@ -26,30 +23,21 @@
     </div>
 
     <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+    <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://platform.linkedin.com/badges/js/profile.js"
-      async
-      defer
     ></script>
   </body>
 </html>
 
 <script>
+  var isLandscape = 0;
+
   $(function () {
     /* -- ONLOAD CONTENT -- */
     setTimeout(function () {
@@ -73,77 +61,40 @@
 
     $(".navbar").css("background-color", "rgba(53, 53, 53, 0.8)");
 
-    window.addEventListener("scroll", () => {
-      $(window).scroll(function () {
-        if ($(document).scrollTop() > 500) {
-          $(".navbar").addClass("setBackground");
-        } else {
-          $(".navbar").removeClass("setBackground");
-        }
-      });
-    });
-
-    $(".navbar-collapse a").click(function () {
-      $(".navbar-collapse").collapse("hide");
-    });
-
-    /* -- SCROLL TO NAV LINKS -- */
-
-    // ----- BY DEFAULT -----
+    /* -- CHECK LANDSCAPE RULE -- */
 
     if (window.innerWidth > window.innerHeight) {
       $(".scrollTo").click(function () {
         var getElem = $(this).attr("href");
         var targetDistance = 70;
-
-        if(getElem != "#Home-sect"){
+        if (getElem == "#Home-sect") {
+          $(window).scrollTop(0);
+        } else {
           if ($(getElem).length) {
             var getOffset = $(getElem).offset().top;
             $("html,body").animate({
               scrollTop: getOffset + targetDistance,
             });
           }
-        }else{
-          scrollTo(0,0);
         }
       });
     }
-    // ----- ON RESIZE WINDOW -----
+  });
 
-    window.addEventListener(
-      "resize",
-      function () {
-        if (window.innerWidth < 992) {
-          //Only mobile view
+  window.addEventListener("scroll", () => {
+    $(window).scroll(function () {
+      if ($(document).scrollTop() > 500) {
+        $(".navbar").addClass("setBackground");
+      } else {
+        $(".navbar").removeClass("setBackground");
+      }
+    });
+  });
 
-          if (window.innerWidth > window.innerHeight) {
-            //Landscape mode
-            $(".scrollTo").click(function () {
-              var getElem = $(this).attr("href");
-              var targetDistance = 70;
-              if ($(getElem).length) {
-                var getOffset = $(getElem).offset().top;
-                $("html,body").animate({
-                  scrollTop: getOffset + targetDistance,
-                });
-              }
-            });
-          } else {
-            //Portrait mode
-            $(".scrollTo").click(function () {
-              var getElem = $(this).attr("href");
-              var targetDistance = 90;
-              if ($(getElem).length) {
-                var getOffset = $(getElem).offset().top;
-                $("html,body").animate({
-                  scrollTop: getOffset - targetDistance,
-                });
-              }
-            });
-          }
-        }
-      },
-      false
-    );
+  $(".navbar-collapse a").click(function () {
+    var delay = 400; // 1 sec
+    window.setTimeout(function () {
+      $(".navbar-collapse").collapse("hide");
+    }, delay);
   });
 </script>
