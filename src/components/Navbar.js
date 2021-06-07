@@ -21,9 +21,6 @@ const Navbar = () => {
               <a className="nav-link scrollTo" href="#About-sect">ABOUT ME</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link scrollTo" href="#Skill-sect">SKILLSET</a>
-            </li>
-            <li className="nav-item">
               <a className="nav-link scrollTo" href="#Portfolio-sect">PORTFOLIO</a>
             </li>
             <li className="nav-item">

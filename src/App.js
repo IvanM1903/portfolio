@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import Header from "./components/Header";
 import Particles from "react-particles-js";
 import AboutMe from "./components/AboutMe";
-import Skillset from "./components/Skillset";
+import Portfolio from "./components/Portfolio";
 function App() {
 
 
@@ -32,7 +32,7 @@ function App() {
         }}
       />
       <AboutMe/>
-      <Skillset/>
+      <Portfolio/>
     </>
   );
 }
