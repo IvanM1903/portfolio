@@ -2,7 +2,6 @@ import React from 'react';
 import Galaga from "../images/galaga.png";
 import web_uni from "../images/web-uc3m.png";
 import web_iot from "../images/web-iot.png";
-import mirror from "../images/mirror.png";
 
 function Portfolio() {
     return (
