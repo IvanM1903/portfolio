@@ -1,7 +1,5 @@
 import React from 'react';
 import Logo from "../images/logo.png";
-//REACT FONTAWESOME IMPORTS
-
 
 const Navbar = () => {
   return (

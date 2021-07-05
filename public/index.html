@@ -40,6 +40,7 @@
     <script type="text/jsx" src="/src/bootstrap/js/cloudTag.js"></script>
   </body>
 </html>
+
 <script>
   $(function () {
     /* -- ONLOAD CONTENT -- */
@@ -61,7 +62,7 @@
     });
 
     /* -- CHECK LANDSCAPE RULE -- */
-
+    /*
     if (window.innerWidth > window.innerHeight) {
       $(".scrollTo").click(function () {
         var getElem = $(this).attr("href");
@@ -78,34 +79,100 @@
         }
       });
     }
+    */
   });
 
-  /* -- SCROLL MOVEMENT THROUGH THE WEB -- */
 
-  $(window).scroll(function () {
-    var top = $(window).scrollTop();
-    var offsetNav = 116;
-    var sectionSize = window.outerHeight;
+  function doOnOrientationChange() {
+    switch(window.orientation) {
+      case 90:
+        return "landscape";
+        break;
+      case -90:
+        return "landscape";
+        break;
+      case 0:
+        return "portrait";
+        break;
+      case 180:
+        return "portrait";
+        break;
+      default:
+        break;
+    }
+  }
 
-    var offset = 2* offsetNav;
+  window.addEventListener('orientationchange', doOnOrientationChange);
 
-    if (top >= sectionSize - offset && top <= 2 * sectionSize - offset) {
-      $(".navbar").addClass("setBackground");
-      $(".navbar").removeClass("setBackground-2");
-    } else if (
-      top > 2 * sectionSize - offset &&
-      top < 3 * sectionSize - offset
-    ) {
-      $(".navbar").addClass("setBackground-2");
-    } else {
-      $(".navbar").removeClass("setBackground");
+  /* -- SCROLL / CLICK TO CHANGE NAV BACKGROUND -- */
+
+  $(".nav-link").click(function(){
+    var sectionToGo = $(this).attr('href');
+
+    switch (sectionToGo) {
+      case "#Home-sect":
+        $(".navbar").removeClass("setBackground");
+        $(".navbar").removeClass("setBackground-2");
+        break;
+      case "#About-sect":
+        $(".navbar").addClass("setBackground");
+        $(".navbar").removeClass("setBackground-2");
+
+        if(doOnOrientationChange() == "landscape"){
+          //Its landscape --> fix nav height
+
+
+        }
+      break;
+      case "#Portfolio-sect":
+        $(".navbar").addClass("setBackground-2");
+        $(".navbar").removeClass("setBackground");
+      break;
+      case "#Contact-sect":
+
+      break;
+      default:
+        break;
     }
   });
 
+  function getHeightNav(){
+      box = $(".navbar").outerHeight();
+      return box;
+  }
+
+  $(window).scroll(function (){
+    var screenHeight = $(window).height();
+    var offsetTop = $(window).scrollTop();
+    var navHeight = getHeightNav();
+    console.log(screenHeight);
+    console.log("Top: "+offsetTop);
+
+    if(offsetTop >= screenHeight){
+      //Check if its twice or more times the screenHeight
+      if(offsetTop >= 2*screenHeight + navHeight){
+        //We are in portfolio
+        $(".navbar").addClass("setBackground-2");
+        $(".navbar").removeClass("setBackground");
+      }else{
+        //We are in about
+        $(".navbar").addClass("setBackground");
+        $(".navbar").removeClass("setBackground-2");
+      }
+    }else{
+      //We are in home
+      $(".navbar").removeClass("setBackground");
+        $(".navbar").removeClass("setBackground-2");
+    }
+    
+  });
+
+  /* -- COLLAPSE NAV MENU WHEN CLICK ON LANDSCAPE MODE -- */
   $(".navbar-collapse a").click(function () {
     var delay = 400; // 1 sec
     window.setTimeout(function () {
       $(".navbar-collapse").collapse("hide");
     }, delay);
   });
+  
 </script>
